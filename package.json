@@ -1,0 +1,31 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "dist": "electron-builder --publish=never"
+  },
+  "build": {
+    "appId": "com.tuempresa.tictactoe",
+    "productName": "Tic Tac Toe",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*",
+      "node_modules/electron/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
